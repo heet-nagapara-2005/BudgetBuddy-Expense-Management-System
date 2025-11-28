@@ -1,0 +1,187 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Expense Management Project",
+            "request": "launch",
+            "mainClass": "main.Main",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml,javafx.web -cp \"lib/mysql-connector-java-8.3.0.jar\""
+        }
+       ,
+        {
+            "type": "java",
+            "name": "Demo",
+            "request": "launch",
+            "mainClass": "Demo",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+          },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "ExpenseManagementProject_48945c3b"
+        }
+        ,
+        {
+            "type": "java",
+            "name": "BarChartExample",
+            "request": "launch",
+            "mainClass": "BarChartExample",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+          },
+          {
+            "type": "java",
+            "name": "TestMailCode",
+            "request": "launch",
+            "mainClass": "TestMailCode",
+            "vmArgs": "-cp .;lib/*"
+        },
+        {
+            "type": "java",
+            "name": "TestManageBudgetScreen",
+            "request": "launch",
+            "mainClass": "TestManageBudgetScreen",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        },
+        {
+            "type": "java",
+            "name": "EmailUtil",
+            "request": "launch",
+            "mainClass": "utils.EmailUtil",
+            "vmArgs": "-cp .;lib/*"
+        },  
+        {
+            "type": "java",
+            "name": "run test Expense Analysis Code",
+            "request": "launch",
+            "mainClass": "TestExpenseAnalysisCode",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        }
+        ,  
+        {
+            "type": "java",
+            "name": "run test Expense Analysis Code 2",
+            "request": "launch",
+            "mainClass": "TestExpenseAnalysisCode2",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        }
+        ,  
+        {
+            "type": "java",
+            "name": "run test Expense Analysis Code 3",
+            "request": "launch",
+            "mainClass": "TestExpenseAnalysisCode3",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        },
+        {
+            "type": "java",
+            "name": "MasterProfileScreen",
+            "request": "launch",
+            "mainClass": "MasterProfileScreen",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        }
+        
+        ,
+        {
+            "type": "java",
+            "name": "TestSearchbarUsingContexMenu",
+            "request": "launch",
+            "mainClass": "TestSearchbarUsingContexMenu",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        },
+        {
+            "type": "java",
+            "name": "TestContextMenuSearch2",
+            "request": "launch",
+            "mainClass": "TestContextMenuSearch2",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        },
+        {
+            "type": "java",
+            "name": "TestSerachBarAnonymousType",
+            "request": "launch",
+            "mainClass": "TestSerachBarAnonymousType",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+         
+        },
+        {
+            "type": "java",
+            "name": "auto mail scheduling",
+            "request": "launch",
+            "mainClass": "mailschedular.AutoMailSchedular",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+        },
+        {
+            "type": "java",
+            "name": "TestAdminDashboardScreen",
+            "request": "launch",
+            "mainClass": "TestAdminDashboardScreen",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+        },
+        {
+            "type": "java",
+            "name": "TestManageUserScreen",
+            "request": "launch",
+            "mainClass": "TestManageUserScreen",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+        },
+        {
+            "type": "java",
+            "name": "TestAdminUserExpensesScreen",
+            "request": "launch",
+            "mainClass": "TestAdminUserExpensesScreen",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+        },
+        {
+            "type": "java",
+            "name": "TestAdminUserBudgetScreen",
+            "request": "launch",
+            "mainClass": "TestAdminUserBudgetScreen",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+        }
+        ,
+        {
+            "type": "java",
+            "name": "SingleScreenModel",
+            "request": "launch",
+            "mainClass": "SingleScreenModel",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml -cp \"lib/mysql-connector-java-8.3.0.jar\""
+        }
+        ,
+        {
+            "type": "java",
+            "name": "LogoPlayScreen",
+            "request": "launch",
+            "mainClass": "LogoPlayScreen",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22/lib\" --add-modules javafx.controls,javafx.fxml,javafx.web"
+        }
+       
+        
+        
+        
+        
+       
+        
+        
+        
+       
+    ]
+}

@@ -1,0 +1,8 @@
+//jar file create karva mate no command
+& "C:\Program Files\Java\jdk-22\bin\jar.exe" cfm AutoMailScheduler.jar manifest.txt -C src/ .
+
+// mail AutoMailSchedular file ne compile karva mate no command
+javac -cp "../lib/*;." mailschedular/AutoMailSchedular.java
+
+//jar file ne run karva mate no command
+ java -cp ".;AutoMailScheduler.jar;lib/*" mailschedular.AutoMailSchedular     

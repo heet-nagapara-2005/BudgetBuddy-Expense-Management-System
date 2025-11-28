@@ -1,0 +1,75 @@
+INSERT INTO generated_reports (
+    user_id, username, email, report_type, report_period,
+    all_categories_amount, highest_amount_category, lowest_amount_category,
+    average_spending, total_transactions
+)
+SELECT
+    u.id AS user_id,
+    u.username,
+    u.email,
+    'monthly',
+    DATE_FORMAT(CURDATE(), '%m/%Y'),
+
+    IFNULL(
+    (
+        SELECT CONCAT('{', GROUP_CONCAT(CONCAT('"', t.category, '":', t.total_amt) ORDER BY t.category SEPARATOR ','), '}')
+        FROM (
+            SELECT e2.u_id, e2.category, SUM(e2.ammount) AS total_amt
+            FROM expenses e2
+            WHERE MONTH(e2.expense_date) = MONTH(CURDATE())
+              AND YEAR(e2.expense_date)  = YEAR(CURDATE())
+            GROUP BY e2.u_id, e2.category
+        ) AS t
+        WHERE t.u_id = u.id), 'no categories'
+    ) AS all_categories_amount,
+
+   
+    IFNULL(
+    (
+        SELECT CONCAT(t.category, ' : ', t.total_amt)
+        FROM (
+            SELECT e2.u_id, e2.category, SUM(e2.ammount) AS total_amt
+            FROM expenses e2
+            WHERE MONTH(e2.expense_date) = MONTH(CURDATE())
+              AND YEAR(e2.expense_date)  = YEAR(CURDATE())
+            GROUP BY e2.u_id, e2.category
+        ) AS t
+        WHERE t.u_id = u.id
+        ORDER BY t.total_amt DESC
+        LIMIT 1), 'no categories'
+    )AS highest_amount_category,
+
+   
+    IFNULL(
+    (
+        SELECT CONCAT(t.category, ' : ', t.total_amt)
+        FROM (
+            SELECT e2.u_id, e2.category, SUM(e2.ammount) AS total_amt
+            FROM expenses e2
+            WHERE MONTH(e2.expense_date) = MONTH(CURDATE())
+              AND YEAR(e2.expense_date)  = YEAR(CURDATE())
+            GROUP BY e2.u_id, e2.category
+        ) AS t
+        WHERE t.u_id = u.id
+        ORDER BY t.total_amt ASC
+        LIMIT 1), 'no categories'
+    ) AS lowest_amount_category,
+
+
+    IFNULL((
+        SELECT AVG(e3.ammount)
+        FROM expenses e3
+        WHERE e3.u_id = u.id
+          AND MONTH(e3.expense_date) = MONTH(CURDATE())
+          AND YEAR(e3.expense_date)  = YEAR(CURDATE())
+    ), 0) AS average_spending,
+
+    IFNULL((
+        SELECT COUNT(*)
+        FROM expenses e4
+        WHERE e4.u_id = u.id
+          AND MONTH(e4.expense_date) = MONTH(CURDATE())
+          AND YEAR(e4.expense_date)  = YEAR(CURDATE())
+    ), 0) AS total_transactions
+
+FROM users u;

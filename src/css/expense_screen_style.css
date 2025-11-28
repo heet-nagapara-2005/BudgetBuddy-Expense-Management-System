@@ -1,0 +1,182 @@
+/* expense-style.css */
+
+/* --- ROOT CONTAINER --- */
+.root {
+    -fx-background-color: #f8f9fa; /* Light background */
+    -fx-font-family: "Arial";
+}
+
+/* --- TITLE --- */
+.label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343a40;
+}
+
+.text-field, .date-picker, .combo-box {
+    -fx-font-size: 14px;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    
+    /* UNIFORM WIDTH & BASE HEIGHT */
+    -fx-min-width: 140px;
+    -fx-pref-width: 150px;
+    /* Common desired height set here (Buttons se match karegi) */
+    -fx-pref-height: 38px; 
+}
+
+/* 1. TEXTFIELD (Sirf padding adjust karna hai) */
+.text-field {
+    /* Padding set to match the desired height of 38px */
+    -fx-padding: 8px; 
+}
+
+/* 2. DATE PICKER (Inner components ko target karna zaroori hai) */
+.date-picker {
+    /* DatePicker ki internal padding/height ko control karne ke liye */
+    -fx-padding: 0; 
+}
+.date-picker .text-field {
+    /* DatePicker ke andar ke TextField ki padding */
+    -fx-padding: 8px;
+}
+.date-picker > .arrow-button {
+    /* Calendar icon button ki height aur padding adjust karein */
+    -fx-padding: 0 5px 0 5px;
+    -fx-max-height: 38px;
+}
+
+/* 3. COMBO BOX (Inner components ko target karna zaroori hai) */
+.combo-box {
+    /* ComboBox ki internal padding/height ko control karne ke liye */
+    -fx-padding: 0;
+}
+.combo-box .list-cell {
+    /* Dropdown ke andar cells ki height */
+    -fx-cell-size: 38px; 
+    -fx-padding: 8px;
+}
+.combo-box .text-input-control {
+    /* ComboBox ke visible part (jahan selected item dikhta hai) ki padding */
+    -fx-padding: 8px;
+}
+.combo-box .arrow-button {
+    /* Dropdown arrow button ki height */
+    -fx-max-height: 38px;
+}
+
+/* Focused State */
+.text-field:focused, .date-picker:focused, .combo-box:focused {
+    -fx-border-color: #80bdff;
+    -fx-border-width: 1.5px;
+}
+/* --- SEARCH BAR --- */
+#search-bar { /* searchBar.setId("search-bar"); */
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-border-color: #adb5bd;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-prompt-text-fill: #6c757d;
+}
+
+/* --- BUTTONS (Bootstrap Style) --- */
+.button {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    
+    /* *** UNIFORM HEIGHT (38px) *** */
+    -fx-pref-height: 38px; 
+    
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0.0, 0, 2); 
+    -fx-transition: all 0.2s ease-in-out;
+}
+.button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0.0, 0, 4);
+    -fx-translate-y: -1px; 
+}
+
+/* Primary Button (Add Button) - Blue */
+#add-button { /* addButton.setId("add-button"); */
+    -fx-background-color: #007bff; 
+}
+#add-button:hover {
+    -fx-background-color: #0056b3; 
+}
+
+/* Danger Button (Delete Button) - Red */
+#delete-button { /* deleteButton.setId("delete-button"); */
+    -fx-background-color: #dc3545;
+}
+#delete-button:hover {
+    -fx-background-color: #c82333;
+}
+
+/* Secondary/Info Button (Refresh/Update Button) - Gray/Teal */
+#refresh-button, #update-button { /* refreshButton.setId("refresh-button"); */
+    -fx-background-color: #17a2b8; /* Teal color for info/secondary action */
+}
+#refresh-button:hover, #update-button:hover {
+    -fx-background-color: #138496;
+}
+
+/* --- TABLE VIEW --- */
+/* --- TABLE VIEW ITSELF (TableView) --- */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6; 
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 5, 0.0, 0, 2);
+    /* Font size ko thoda badhaya */
+    -fx-font-size: 14px; 
+}
+
+/* --- TABLE HEADERS --- */
+.column-header-background {
+    -fx-background-color: #f1f3f5;
+    /* Padding badhaya (Top aur Bottom) taki header ko height mile */
+    -fx-padding: 8px 0 8px 0; 
+    -fx-size: 40px; /* Header background ki minimum height set ki */
+}
+.column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #343a40;
+    /* Font size badhaya */
+    -fx-font-size: 14px; 
+    /* Text left align rakha */
+    -fx-alignment: CENTER; 
+}
+
+/* FIX: COLUMN HEADER TEXT KA WRAPPING BAND KARNA aur space lena */
+.column-header {
+    -fx-max-width: infinity; 
+    -fx-wrap-text: false; /* Ensure text does not wrap and takes one line */
+}
+
+/* --- TABLE ROWS --- (Existing Styles) */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-cell-size: 35px;
+}
+/* ... (rest of the table-row-cell styles) ... */
+.table-row-cell:odd {
+    -fx-background-color: #fcfcfc; 
+}
+/* Selected Row (Primary Blue Look) */
+.table-row-cell:selected {
+    -fx-background-color: #3e98f8;
+    -fx-text-fill: white;
+}
+.table-row-cell:selected .text {
+    -fx-fill: white; 
+}
+.table-column.center-left-data > .table-cell {
+    -fx-alignment: CENTER-LEFT;
+}

@@ -1,0 +1,97 @@
+/* signup-styles.css (Bootstrap-Inspired) */
+
+/* --- Top Level Containers --- */
+.signup-root {
+    -fx-background-color: #f8f9fa; /* Light Gray/White */
+}
+
+/* --- Top Bar (for Heading Background) --- */
+.top-bar {
+    /* Corresponds to: topBar.setStyle("-fx-background-color: #ADD8E6; -fx-padding: 10;"); */
+    -fx-background-color: #e9ecef; /* Very Light Gray/Bootstrap secondary background */
+    -fx-padding: 15px; /* Increased padding */
+    -fx-alignment: center;
+}
+
+/* --- Title Label (Inside Top Bar) --- */
+.signup-title {
+    /* Corresponds to: titleLabel.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;"); */
+    -fx-font-size: 26px; /* Larger heading */
+    -fx-font-weight: 700;
+    -fx-text-fill: #343a40;
+}
+
+/* --- Grid Container --- */
+.signup-grid {
+    /* Border and shadow to give it a "card" look */
+    -fx-background-color: white;
+    -fx-padding: 30px; 
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0);
+}
+
+/* --- Form Labels --- */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #495057;
+    -fx-font-weight: 500;
+}
+
+/* --- Text Fields & Password Fields (Bootstrap Form Control look) --- */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 10px; 
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #80bdff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 123, 255, 0.25), 5, 0, 0, 0);
+}
+
+/* --- Signup Button (Bootstrap Success Button) --- */
+.signup-button {
+    -fx-background-color: #28a745; /* Success Green */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 18px;
+    -fx-cursor: hand;
+    -fx-pref-width: 100%; 
+    -fx-background-radius: 4px;
+    -fx-font-size: 14px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.0, 0, 1);
+}
+
+.signup-button:hover {
+    -fx-background-color: #1e7e34; 
+}
+
+
+.message-label {
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 0 0 0; 
+}
+
+.message-label.success {
+    -fx-text-fill: #28a745;
+}
+
+.message-label.error {
+    -fx-text-fill: #dc3545; 
+}
+
+.login-link {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c757d;
+    -fx-underline: true;
+    -fx-padding: 15px 0 0 0;
+}
+
+.login-link:hover {
+    -fx-text-fill: #007bff; 
+}

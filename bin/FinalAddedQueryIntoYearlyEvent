@@ -1,0 +1,67 @@
+INSERT INTO generated_reports (
+    user_id, username, email, report_type, report_period,
+    all_categories_amount, highest_amount_category, lowest_amount_category,
+    average_spending, total_transactions
+)
+SELECT 
+u.id as user_id,
+u.username as username,
+u.email as email,
+'yearly',
+DATE_FORMAT(CURDATE(),'%Y')  AS report_period,
+
+
+IFNULL(
+(SELECT CONCAT('{', GROUP_CONCAT(CONCAT('"', t.category, '":', t.total_amt) ORDER BY t.category SEPARATOR ','), '}')
+FROM (
+    SELECT u_id,category, SUM(ammount) AS total_amt
+    FROM expenses 
+    WHERE YEAR(expense_date) = YEAR(CURDATE())
+    GROUP BY u_id,category
+) AS t 
+WHERE t.u_id = u.id), 'no categories'
+                        
+ )AS all_categories_amount,
+
+IFNULL(
+ (SELECT CONCAT(t.category, ' : ', t.total_amt)
+ FROM(
+    SELECT u_id, category, SUM(ammount) AS total_amt
+    FROM expenses
+    WHERE YEAR(expense_date) = YEAR(CURDATE())
+    GROUP BY u_id, category
+ ) AS t
+ WHERE t.u_id = u.id
+    ORDER BY t.total_amt DESC
+    LIMIT 1 ), 'no categories')
+    AS highest_amount_category,
+
+
+IFNULL(
+(SELECT CONCAT(t.category, ' : ', t.total_amt)
+ FROM(
+    SELECT u_id, category, SUM(ammount) AS total_amt
+    FROM expenses
+    WHERE YEAR(expense_date) = YEAR(CURDATE())
+    GROUP BY u_id, category
+ ) AS t
+ WHERE t.u_id = u.id
+    ORDER BY t.total_amt ASC
+    LIMIT 1), 'no categories')
+     AS lowest_amount_category,
+
+IFNULL(
+    (SELECT AVG(ammount)
+    FROM expenses
+    WHERE u_id = u.id
+      AND YEAR(expense_date) = YEAR(CURDATE()))
+,0) AS average_spending,
+    
+
+IFNULL(
+    (SELECT COUNT(*)
+    FROM expenses
+    WHERE u_id = u.id
+      AND YEAR(expense_date) = YEAR(CURDATE())
+),0) AS total_transactions
+FROM users u;

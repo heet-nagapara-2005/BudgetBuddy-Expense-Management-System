@@ -1,0 +1,142 @@
+
+.root {
+    -fx-background-color: #f8f9fa; 
+    -fx-font-family: "Arial";
+}
+
+
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343a40;
+}
+
+
+#form-panel { 
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0.0, 0, 3);
+}
+
+.text-field, .date-picker, .combo-box {
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+.text-field:focused, .date-picker:focused, .combo-box:focused {
+    -fx-border-color: #80bdff;
+    -fx-border-width: 1.5px;
+}
+
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0.0, 0, 2); 
+}
+.button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0.0, 0, 4);
+    -fx-translate-y: -1px; 
+}
+.button:pressed {
+   
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 2, 0.0, 0, 1);
+    -fx-translate-y: 1px;
+}
+
+#add-button { 
+    -fx-background-color: #007bff; 
+}
+#add-button:hover {
+    -fx-background-color: #0056b3; 
+}
+
+.button-secondary { 
+    -fx-background-color: #6c757d; 
+}
+.button-secondary:hover {
+    -fx-background-color: #5a6268;
+}
+
+#delete-button-row {
+    -fx-background-color: #dc3545; 
+    -fx-padding: 4px 8px; 
+    -fx-font-size: 12px;
+}
+#delete-button-row:hover {
+    -fx-background-color: #c82333;
+}
+
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}
+
+#progress-box, #chart-box {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #bbdefb;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.08), 5, 0.0, 0, 1);
+}
+
+
+#table-panel { 
+    
+    -fx-padding: 15px 10px 10px 10px; 
+}
+
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-cell-size: 35px;
+}
+.table-row-cell:odd {
+    -fx-background-color: #fcfcfc; 
+}
+.table-row-cell:selected {
+    -fx-background-color: #3e98f8;  
+   
+    
+}
+.table-row-cell:selected .text {
+    -fx-fill: white; 
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6; 
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px; 
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 5, 0.0, 0, 2); 
+    -fx-font-size: 13px;
+}
+#delete-button-row { 
+    -fx-background-color: #dc3545; 
+    -fx-padding: 5px 10px; 
+    -fx-font-size: 12px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 3, 0.0, 0, 1);
+    -fx-text-fill: black; 
+}
+#delete-button-row:hover {
+    -fx-background-color: #c82333;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0.0, 0, 2);
+}
